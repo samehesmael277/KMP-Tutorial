@@ -15,6 +15,7 @@ compose-plugin = "1.6.2"
 junit = "4.13.2"
 kotlin = "1.9.23"
 voyagerVersion = "1.0.0"
+koinVersion = "3.6.0-wasm-alpha2"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -32,6 +33,9 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyagerVersion" }
 navigator-tab = { module = "cafe.adriel.voyager:voyager-tab-navigator", version.ref = "voyagerVersion" }
 navigator-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyagerVersion" }
+navigator-screenmodel = { module = "cafe.adriel.voyager:voyager-screenmodel", version.ref = "voyagerVersion" }
+navigator-koin = { module = "cafe.adriel.voyager:voyager-koin", version.ref = "voyagerVersion" }
+koin = { module = "io.insert-koin:koin-core", version.ref = "koinVersion" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

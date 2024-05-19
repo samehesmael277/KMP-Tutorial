@@ -9,6 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.koin.getNavigatorScreenModel
+import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import screen.show.ShowScreen
 
@@ -16,6 +18,14 @@ data class DetailsScreen(val name: String) : Screen {
     @Composable
     override fun Content() {
         val navigator = LocalNavigator.current
+        // todo without koin
+        // val viewModel = rememberScreenModel { DetailsViewModel() }
+        // val sharedViewModel = navigator?.rememberNavigatorScreenModel { DetailsViewModel() }
+
+        // todo with koin
+        val viewModel = getScreenModel<DetailsViewModel>()
+        // val sharedViewModel = navigator?.getNavigatorScreenModel<DetailsViewModel>()
+
         Column(
             modifier = Modifier
                 .fillMaxSize(),
@@ -23,6 +33,7 @@ data class DetailsScreen(val name: String) : Screen {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text("Details Screen")
+            Text("view model number: ${viewModel.number.value}")
             Text("You pass: $name")
             Button(
                 onClick = {
