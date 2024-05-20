@@ -46,6 +46,8 @@ kotlin {
             implementation(libs.navigator.screenmodel)
             implementation(libs.navigator.koin)
             implementation(libs.koin)
+
+            implementation(libs.messagebarkmp)
         }
     }
 }
